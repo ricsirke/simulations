@@ -1,7 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
-import seaborn as sns
 
 
 N = 100
@@ -38,10 +37,7 @@ pos_x = 0
 pos_y = -8
 player_score_text_handle = plt.text(pos_x, pos_y, "blocks: 0")
 perimeter_score_text_handle = plt.text(0, -3, "perimeter blocks: 0")
-
-def init():
-    pass
-    
+ 
 
 def animate(i):
     global perimeters, world, im
@@ -70,15 +66,12 @@ def animate(i):
     
 
 interval_ms = 50
-anim = FuncAnimation(fig, animate, init_func=init, frames=2000, interval = interval_ms, repeat = False)
+anim = FuncAnimation(fig, animate, frames=2000, interval = interval_ms, repeat = False)
 
 plt.axis('off')
 
 
 anim.save("anim.mp4")
 ####################################################################
-"""
-ax = sns.heatmap(world, cbar=False)
-"""
 
 #plt.show()
