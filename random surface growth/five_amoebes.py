@@ -3,8 +3,8 @@ import numpy as np
 import Amoebes
 
 
-world_size = 30
-world = Amoebes.World(world_size=world_size)        
+world_map = np.zeros((30, 30))
+world = Amoebes.World(world_map)
 
 starting_point_coord = int(np.floor(world.world_size/2))
 starting_point = [starting_point_coord, starting_point_coord]

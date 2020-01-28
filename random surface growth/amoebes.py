@@ -4,9 +4,9 @@ from matplotlib.animation import FuncAnimation
 
 
 class World:
-    def __init__(self, world_size):
-        self.world_size = world_size
-        self.world = np.zeros((world_size, world_size))
+    def __init__(self, world):
+        self.world_shape = world.shape
+        self.world = world
         self.empty_block_mark = 0
         self.amoebes = None
 
@@ -15,9 +15,9 @@ class World:
         j = pos[1]
         
         neighs = []
-        if i+1 < self.world_size:
+        if i+1 < self.world_shape[0]:
             neighs.append([i+1,j])
-        if j+1 < self.world_size:
+        if j+1 < self.world_shape[1]:
             neighs.append([i,j+1])
         if 0 <= i-1:
             neighs.append([i-1,j])
